@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>程式設計</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- 加入 Font Awesome 圖示庫 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+        <h1>程式設計</h1>
+    </nav>
+
+    <!-- 側邊選單 -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="close-sidebar">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+        <ul class="menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> 首頁</a></li>
+            <li class="has-submenu">
+                <a href="#"><i class="fas fa-code"></i> 程式語言 <i class="fas fa-chevron-down"></i></a>
+                <ul class="submenu">
+                    <li><a href="#" data-language="c">C 語言</a></li>
+                    <li><a href="#" data-language="cpp">C++</a></li>
+                    <li><a href="#" data-language="python">Python</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class="fas fa-info-circle"></i> 網頁資訊</a></li>
+            <li class="theme-switch-wrapper">
+                <span><i class="fas fa-moon"></i> 深色模式</span>
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                    <div class="slider round"></div>
+                </label>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 遮罩層 -->
+    <div class="overlay" id="overlay"></div>
+
+    <main>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="搜尋題目...">
+        </div>
+        <div class="problem-list" id="problemList">
+            <!-- 內容會由 JavaScript 動態生成 -->
+        </div>
+    </main>
+
+    <div id="codeModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="code-header">
+                <h2 id="modalTitle"></h2>
+                <button class="copy-btn" id="copyBtn">
+                    <i class="fas fa-copy"></i> 複製程式碼
+                </button>
+            </div>
+            <pre><code id="codeContent"></code></pre>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

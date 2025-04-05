@@ -1,0 +1,394 @@
+:root {
+    --primary-color: #2c3e50;
+    --background-color: #f5f5f5;
+    --text-color: #333;
+    --card-background: white;
+    --code-background: #f8f9fa;
+    --search-background: white;
+    --sidebar-background: white;
+    --sidebar-text: #333;
+    --sidebar-hover: #e9ecef;
+}
+
+[data-theme="dark"] {
+    --primary-color: #1a1a1a;
+    --background-color: #121212;
+    --text-color: #ffffff;
+    --card-background: #2d2d2d;
+    --code-background: #1e1e1e;
+    --search-background: #3d3d3d;
+    --sidebar-background: #2d2d2d;
+    --sidebar-text: #ffffff;
+    --sidebar-hover: #3d3d3d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "微軟正黑體", Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+    width: 100%;
+    max-width: 600px;
+    padding: 0 1rem;
+}
+
+#searchInput {
+    padding: 0.8rem 1.2rem;
+    width: 100%;
+    max-width: 600px;
+    border: 2px solid var(--primary-color);
+    border-radius: 25px;
+    font-size: 1rem;
+    background-color: var(--search-background);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#searchInput:focus {
+    outline: none;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+#searchInput::placeholder {
+    color: #999;
+}
+
+.problem-list {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.problem-item {
+    background-color: var(--card-background);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.2s;
+    color: var(--text-color);
+}
+
+.problem-item:hover {
+    transform: translateY(-2px);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    overflow-y: auto;
+}
+
+.modal-content {
+    position: relative;
+    background-color: var(--card-background);
+    margin: 5% auto;
+    padding: 2rem;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 8px;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+pre {
+    background-color: var(--code-background);
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    white-space: pre;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+code {
+    font-family: Consolas, Monaco, 'Courier New', monospace;
+    line-height: 1.5;
+}
+
+.theme-switch-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-top: 1px solid var(--sidebar-hover);
+}
+
+.theme-switch-wrapper em {
+    margin-left: 10px;
+    font-size: 1rem;
+}
+
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+}
+
+.slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 26px;
+}
+
+input:checked + .slider {
+    background-color: #66bb6a;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* 導航欄樣式 */
+.navbar {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar h1 {
+    margin: 0;
+    margin-left: 1rem;
+    font-size: 1.5rem;
+}
+
+.hamburger {
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+}
+
+/* 側邊選單樣式 */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: var(--sidebar-background);
+    z-index: 1000;
+    transition: 0.3s;
+    overflow-y: auto;
+    color: var(--sidebar-text);
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar-header {
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.close-sidebar {
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.menu li:hover {
+    background-color: var(--sidebar-hover);
+}
+
+.menu a {
+    color: var(--sidebar-text);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.menu i {
+    margin-right: 10px;
+}
+
+.submenu {
+    list-style: none;
+    padding-left: 2rem;
+    display: none;
+}
+
+.submenu.active {
+    display: block;
+}
+
+/* 遮罩層樣式 */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+}
+
+.overlay.active {
+    display: block;
+}
+
+/* 調整主要內容區域 */
+main {
+    margin-top: 80px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 添加新的 CSS 樣式 */
+.highlight-green {
+    color: #4CAF50;  /* 綠色 */
+    font-weight: bold;
+}
+
+/* 添加新的樣式 */
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.copy-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+    background-color: #1a8870;
+}
+
+.copy-btn.success {
+    background-color: #4CAF50;
+}
+
+/* 美化滾動條樣式（適用於 Webkit 瀏覽器，如 Chrome、Safari） */
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: var(--background-color);
+    border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: #1a8870;
+}
+
+/* 程式碼區塊的滾動條 */
+pre::-webkit-scrollbar {
+    height: 8px; /* 水平滾動條的高度 */
+}
+
+pre::-webkit-scrollbar-track {
+    background: var(--background-color);
+    border-radius: 4px;
+}
+
+pre::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+pre::-webkit-scrollbar-thumb:hover {
+    background: #1a8870;
+} 
