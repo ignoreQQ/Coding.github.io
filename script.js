@@ -926,31 +926,31 @@ int main()
             printf("2");
             break;
         case 3:
-            printf("3\n2");
+            printf("3\\n2");
             break;
         case 5:
-            printf("5\n3\n2");
+            printf("5\\n3\\n2");
             break;
         case 7:
-            printf("7\n5\n3\n2");
+            printf("7\\n5\\n3\\n2");
             break;
         case 11:
-            printf("11\n7\n5\n3\n2");
+            printf("11\\n7\\n5\\n3\\n2");
             break;
         case 13:
-            printf("13\n11\n7\n5\n3\n2");
+            printf("13\\n11\\n7\\n5\\n3\\n2");
             break;
         case 17:
-            printf("17\n13\n11\n7\n5\n3\n2");
+            printf("17\\n13\\n11\\n7\\n5\\n3\\n2");
             break;
         case 19:
-            printf("19\n17\n13\n11\n7\n5\n3\n2");
+            printf("19\\n17\\n13\\n11\\n7\\n5\\n3\\n2");
             break;
         case 23:
-            printf("23\n19\n17\n13\n11\n7\n5\n3\n2");
+            printf("23\\n19\\n17\\n13\\n11\\n7\\n5\\n3\\n2");
             break;
         case 29:
-            printf("29\n23\n19\n17\n13\n11\n7\n5\n3\n2");
+            printf("29\\n23\\n19\\n17\\n13\\n11\\n7\\n5\\n3\\n2");
             break;
         
         default:
