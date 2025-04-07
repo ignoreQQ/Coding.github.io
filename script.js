@@ -249,7 +249,7 @@ int main()
     scanf("%d", &num2);
     scanf("%d", &num3);
     
-    printf("%d\n%d\n%d\n", num2, num3,num1);
+    printf("%d\\n%d\\n%d\\n", num2, num3,num1);
     
     return 0;
 }`
@@ -267,7 +267,7 @@ int main()
     int num;
     
     scanf("%d", &num);
-    printf("%d\n%d%d\n%d%d%d\n", num, num, num, num, num, num);
+    printf("%d\\n%d%d\\n%d%d%d\\n", num, num, num, num, num, num);
     
     return 0;
 }`
@@ -285,10 +285,10 @@ int main()
     int num;
     scanf("%d", &num);
     
-    printf("%d%d%d%d%d%d%d%d%d%d \n", num, num, num, num, num, num, num, num, num, num);
-    printf("---%d--%d \n", num, num);
-    printf("--%d---%d---%d \n", num, num, num);
-    printf("-%d----%d--%d \n", num, num, num);
+    printf("%d%d%d%d%d%d%d%d%d%d \\n", num, num, num, num, num, num, num, num, num, num);
+    printf("---%d--%d \\n", num, num);
+    printf("--%d---%d---%d \\n", num, num, num);
+    printf("-%d----%d--%d \\n", num, num, num);
     printf("%d------%d%d", num, num, num);
     
     return 0;
@@ -325,8 +325,8 @@ int main()
     
     scanf("%d %d", &kilo, &mega);
     
-    printf("%dMB\n", kilo / 1024);
-    printf("%dMB\n", mega * 1024);
+    printf("%dMB\\n", kilo / 1024);
+    printf("%dMB\\n", mega * 1024);
     
     return 0;
 }`
@@ -343,7 +343,7 @@ int main()
 {
     int num1, num2;
     scanf("%d %d",&num1, &num2);
-    printf("%d \n", num1 % num2);
+    printf("%d \\n", num1 % num2);
     printf("%d", num1 / num2);
     return 0;
 }
@@ -363,8 +363,8 @@ int main()
     
     // Array 1 輸入
     
-    scanf("%d %d\n", &arr1[0][0], &arr1[0][1]);
-    scanf("%d %d\n", &arr1[1][0], &arr1[1][1]);
+    scanf("%d %d\\n", &arr1[0][0], &arr1[0][1]);
+    scanf("%d %d\\n", &arr1[1][0], &arr1[1][1]);
 
     // Array 2 輸入
     
@@ -384,7 +384,7 @@ int main()
         for(int j = 0; j < 2; j++ ){
             printf("%d ", ans[i][j]);
         }
-        printf("\n");
+        printf("\\n");
     }
     
     return 0;
@@ -533,21 +533,21 @@ int main()
   scanf("%d %d", &num1, &num2);
   if(num1 == 0){
     if(num2 == 0){
-      printf("Carry=0\n");
+      printf("Carry=0\\n");
       printf("Sum=0");
     }
     else{
-      printf("Carry=0\n");
+      printf("Carry=0\\n");
       printf("Sum=1");
     }
   }
   else{
     if(num2 == 0){
-      printf("Carry=0\n");
+      printf("Carry=0\\n");
       printf("Sum=1");
     }
     else{
-      printf("Carry=1\n");
+      printf("Carry=1\\n");
       printf("Sum=0");
     }
   }
@@ -569,10 +569,10 @@ int main()
   scanf("%d",&score);
   
   if(score >= 60){
-      printf("pass!");
+    printf("pass!");
   }
   else{
-      printf("fail!");
+    printf("fail!");
   }
   
   return 0;
