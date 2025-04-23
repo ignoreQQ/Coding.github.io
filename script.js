@@ -967,7 +967,40 @@ addProblem({
     title: "ca0415",
     description: "",
     language: "c",
-    code: ``
+    code: `#include <stdio.h>
+
+int main() {
+    int special, spe, top1, top2, top3, num;
+    scanf("%d",&special);
+    scanf("%d",&spe);
+    scanf("%d",&top1);
+    scanf("%d",&top2);
+    scanf("%d",&top3);
+    scanf("%d",&num);
+    
+    if (num == special){
+        printf("10000");
+    }
+    else if (num == spe){
+        printf("2000");
+    }
+    else if (num == top1 || num == top2 || num == top3){
+        printf("800");
+    }
+    else if (num % 10000 == top2 % 10000 || num % 10000 == top3 % 10000){
+        printf("400");
+    }
+    else if (num % 1000 == top2 % 1000 || num % 1000 == top3 % 1000 ){
+        printf("100");
+    }
+    else {
+        printf("0");
+    }
+    
+    return 0;
+}
+
+`
 }); 
 
 addProblem({
