@@ -1060,10 +1060,98 @@ int main() {
 }); 
 
 addProblem({
+    id: 501,
+    title: "ca0501 列印等差級數",
+    description: "給定等差級數的特徵，請寫一個程式列印所有項以及此等差級數的和。輸入依序為首項a，項數n與差值d。輸出前n項為此等差級數，第n+1項為該等差級數之和。",
+    language: "c",
+    code: `#include <stdio.h>
+
+int main()
+{
+    int a, n, d, total = 0;
+    scanf("%d %d %d", &a, &n, &d);
+    for(int i = 0; i < n; i++){
+        printf("%d ",a + d * i);
+        total += a + d * i;
+    }
+    printf("%d",total);
+    return 0;
+}`
+}); 
+
+addProblem({
+    id: 502,
+    title: "ca0502",
+    description: "",
+    language: "c",
+    code: ``
+}); 
+
+addProblem({
+    id: 509,
+    title: "ca0509 日期計算器(一)",
+    description: "給四個變數前三個分別是年、月、日，請計算N天後的日期是多少如果N為正請往後推算，若N為負請往前推算並將結果按照年/月/日輸出",
+    language: "c",
+    code: `#include <stdio.h>
+
+int Leap_Year(int year) {
+    return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+}
+
+int get_days_in_month(int year, int month) {
+    int days_in_month[] = {31, 28, 31, 30, 31, 30,
+                           31, 31, 30, 31, 30, 31};
+
+    if (month == 2 && Leap_Year(year))
+        return 29;
+    else
+        return days_in_month[month - 1];
+}
+
+int main() {
+    int year, month, day, n;
+    scanf("%d %d %d %d", &year, &month, &day, &n);
+
+    while (n > 0) {
+        int days_this_month = get_days_in_month(year, month);
+        if (day + n <= days_this_month) {
+            day += n;
+            n = 0;
+        } else {
+            n -= (days_this_month - day + 1);
+            day = 1;
+            month++;
+            if (month > 12) {
+                month = 1;
+                year++;
+            }
+        }
+    }
+
+    while (n < 0) {
+        if (day + n > 0) {
+            day += n;
+            n = 0;
+        } else {
+            n += day;
+            month--;
+            if (month < 1) {
+                month = 12;
+                year--;
+            }
+            day = get_days_in_month(year, month);
+        }
+    }
+
+    printf("%d/%d/%d\n", year, month, day);
+    return 0;
+}`
+}); 
+
+addProblem({
     id: 417,
     title: "ca0417",
     description: "",
     language: "c",
     code: ``
 }); 
-
