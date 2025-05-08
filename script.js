@@ -1,4 +1,3 @@
-// 儲存程式題目的資料
 let problems = [
     // 範例資料格式
     // {
@@ -20,13 +19,12 @@ const closeBtn = document.querySelector('.close');
 // 新增程式題目的函數
 function addProblem(problem) {
     if (!problem.language) {
-        problem.language = 'c'; // 預設為 C 語言
+        problem.language = 'c'; //  C 語言
     }
     problems.push(problem);
     renderProblems();
 }
 
-// 渲染題目列表
 function renderProblems(filteredProblems = problems) {
     problemList.innerHTML = '';
     filteredProblems.forEach(problem => {
