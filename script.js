@@ -1143,7 +1143,7 @@ int main() {
         }
     }
 
-    printf("%d/%d/%d\n", year, month, day);
+    printf("%d/%d/%d\\n", year, month, day);
     return 0;
 }`
 }); 
