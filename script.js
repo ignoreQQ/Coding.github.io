@@ -832,21 +832,21 @@ int main()
 	scanf("%d",&num);
 
 	switch(num) {
-	    case 1:
-	    case 3:
-	    case 11:
-	    case 19:
-	    case 37:
-	    case 55:
-	    case 87:
+	case 1:
+	case 3:
+	case 11:
+	case 19:
+	case 37:
+	case 55:
+	case 87:
 
-		    printf("1A");
-		    break;
+		printf("1A");
+		break;
 
-	    case 4:
-	    case 12:
-	    case 20:
-	    case 38:
+	case 4:
+	case 12:
+	case 20:
+	case 38:
         case 56:
         case 88:
     
